@@ -1,4 +1,4 @@
-# eslint-plugin-react-intl
+# eslint-plugin-react-i18n-extractor
 
 Helper for react-intl i18n
 
@@ -10,10 +10,10 @@ You'll first need to install [ESLint](https://eslint.org/):
 npm i eslint --save-dev
 ```
 
-Next, install `eslint-plugin-react-intl`:
+Next, install `eslint-plugin-react-i18n-extractor`:
 
 ```sh
-npm install eslint-plugin-react-intl --save-dev
+npm install eslint-plugin-react-i18n-extractor --save-dev
 ```
 or add it locally on a subdirectory after the checkout: 
 ```
@@ -21,19 +21,19 @@ or add it locally on a subdirectory after the checkout:
     "@babel/eslint-parser": "^7.21.3",
     "@typescript-eslint/eslint-plugin": "^5.43.0",
     ...
-    "eslint-plugin-react-intl": "file:../eslint-plugin-react-intl",
+    "eslint-plugin-react-i18n-extractor": "file:../eslint-plugin-react-i18n-extractor",
     ...
 }
 ```
 
 ## Usage
 
-Add `react-intl` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
+Add `react-i18n-extractor` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
 
 ```json
 {
     "plugins": [
-        "react-intl"
+        "react-i18n-extractor"
     ]
 }
 ```
