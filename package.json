@@ -1,14 +1,23 @@
 {
-  "name": "eslint-plugin-react-intl",
+  "name": "eslint-plugin-react-i18n-extractor",
   "version": "0.0.0",
-  "description": "Helper for react-intl i18n",
+  "description": "ESLint plugin for extracting react text and attributes for internationalization",
   "keywords": [
     "eslint",
     "eslintplugin",
-    "eslint-plugin"
+    "eslint-plugin",
+    "react",
+    "react-intl",
+    "i18n",
+    "internationalization",
+    "extractor"
   ],
   "author": "Samuel Vrech",
   "main": "./lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Confirm-HR/eslint-plugin-react-i18n-extractor"
+  },
   "exports": "./lib/index.js",
   "scripts": {
     "lint": "npm-run-all \"lint:*\"",
