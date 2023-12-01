@@ -90,5 +90,41 @@ ruleTester.run("no-static-text", rule, {
         }
       `,
     },
+    {
+      options: [
+        {
+          noAttributeStrings: true,
+          noAttributeStringsInclude: ["title"],
+          attributeSubstitutionFn: "function (node, context, fixer) { return fixer.replaceText(node,'{\"STATIC_ATTRIBUTE_CUSTOM_TEXT\"}'); } ",
+          literalSubstitutionFn: "function (node, context, fixer) { return fixer.replaceText(node,'STATIC_LITERAL_CUSTOM_TEXT'); } ",
+        },
+      ],
+      filename:
+        "somepath/src/components/another-sub/libraryAcc/foo/BarGammaZZs.ts",
+      code: `
+        class Comp2 extends Component {
+          render() {
+            return (<div anotherAttribute="Can be string" title="Cannot be string">test</div>);
+          }
+        }
+      `,
+      errors: [
+        {
+          messageId: "noStringsInAttributes",
+          data: { text: '"Cannot be string"' },
+        },
+        {
+          messageId: "literalNotInJSXExpression",
+          data: { text: "test" },
+        },
+      ],
+      output: `
+        class Comp2 extends Component {
+          render() {
+            return (<div anotherAttribute="Can be string" title={"STATIC_ATTRIBUTE_CUSTOM_TEXT"}>STATIC_LITERAL_CUSTOM_TEXT</div>);
+          }
+        }
+      `,
+    },
   ],
 });
