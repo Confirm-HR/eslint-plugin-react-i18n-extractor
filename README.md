@@ -23,7 +23,7 @@ and if you enable the options `noAttributeStrings` and `noAttributeStringsList=[
 ```
 gets transformed into
 ```
-<div title={formatMessage({id:'relative.file.path.div.title.my_title'})}><FormattedMessage id="relative.file.path.hello" defaultMessage="Hello"></div>
+<div title={formatMessage({id:'relative.file.path.div.title.my_title', defaultMesage:'my title'})}><FormattedMessage id="relative.file.path.hello" defaultMessage="Hello"></div>
 ```
 
 ## Installation
