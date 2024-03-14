@@ -110,7 +110,7 @@ ruleTester.run("no-static-text", rule, {
       output: `
         class Comp1 extends Component {
           render() {
-            return (<div><FormattedMessage id="components.another_sub.library_acc.foo.bar_gamma_z_zs.test_&;'#p;_with_some_spaces_and" defaultMessage="test &;'#p; with some spaces and special characters &;'#p;#wpw and more"/></div>);
+            return (<div><FormattedMessage id="components.another_sub.library_acc.foo.bar_gamma_z_zs.test_p_with_some_spaces_and_special_characters_pwpw_and_more" defaultMessage="test &;'#p; with some spaces and special characters &;'#p;#wpw and more"/></div>);
           }
         }
       `,
