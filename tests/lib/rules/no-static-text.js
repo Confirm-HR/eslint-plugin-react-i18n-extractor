@@ -51,7 +51,7 @@ ruleTester.run("no-static-text", rule, {
       output: `
         class Comp1 extends Component {
           render() {
-            return (<div><FormattedMessage id="app.components.another_sub.library_acc.foo.bar_gamma_z_zs." defaultMessage="test"/></div>);
+            return (<div><FormattedMessage id="components.another_sub.library_acc.foo.bar_gamma_z_zs." defaultMessage="test"/></div>);
           }
         }
       `,
@@ -61,6 +61,7 @@ ruleTester.run("no-static-text", rule, {
         {
           noAttributeStrings: true,
           noAttributeStringsInclude: ["title"],
+          idPrefix: "app.",
         },
       ],
       filename:
@@ -91,8 +92,33 @@ ruleTester.run("no-static-text", rule, {
       `,
     },
     {
+      filename:
+        "somepath/src/components/another-sub/libraryAcc/foo/BarGammaZZs.ts",
+      code: `
+        class Comp1 extends Component {
+          render() {
+            return (<div>test &;'#p; with some spaces and special characters &;'#p;#wpw and more</div>);
+          }
+        }
+      `,
+      errors: [
+        {
+          messageId: "literalNotInJSXExpression",
+          data: { text: "test &;'#p; with some spaces and special characters &;'#p;#wpw and more" },
+        },
+      ],
+      output: `
+        class Comp1 extends Component {
+          render() {
+            return (<div><FormattedMessage id="components.another_sub.library_acc.foo.bar_gamma_z_zs." defaultMessage="test &;'#p; with some spaces and special characters &;'#p;#wpw and more"/></div>);
+          }
+        }
+      `,
+    },
+    {
       options: [
         {
+          idPrefix: "app.",
           noAttributeStrings: true,
           noAttributeStringsInclude: ["title"],
           attributeSubstitutionFn: "function (node, context, fixer) { return fixer.replaceText(node,'{\"STATIC_ATTRIBUTE_CUSTOM_TEXT\"}'); } ",
