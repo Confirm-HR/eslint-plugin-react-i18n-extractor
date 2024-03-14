@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-react-i18n-extractor",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "ESLint plugin to highlight and extract react text and attributes for internationalization",
   "keywords": [
     "eslint",
