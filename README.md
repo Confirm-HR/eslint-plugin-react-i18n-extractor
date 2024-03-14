@@ -1,6 +1,9 @@
 # eslint-plugin-react-i18n-extractor
+This plugin is developed and maintained by [Confirm](https://www.confirm.com/):
 
-Helper for react-intl i18n to extract string literals and attributes in a format that is suitable for [formatJS](https://formatjs.io/), [react-intl](https://formatjs.io/docs/react-intl/), etc. 
+[<img src="https://i.ibb.co/108T7SH/confirm-logo-blk-bg.png" height='64'/>](https://www.confirm.com) 
+
+This is a plugin to help extracting string literals and attributes in a format that is suitable for [formatJS](https://formatjs.io/), [react-intl](https://formatjs.io/docs/react-intl/), etc. 
 
 This rule is inspired by [jsx-no-literals](https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-no-literals.md) and it expand his capabilities, impementing a --fix.
 
